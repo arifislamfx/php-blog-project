@@ -11,11 +11,14 @@ if (isset($_POST['add_post'])) {
 
 
 <h2>This is add post page.</h2>
-<?php if (isset($msg)) {
-    echo $msg;
-} ?>
+
 
 <form class="form" action="" method="POST" enctype="multipart/form-data">
+
+    <?php if (isset($msg)) {
+        echo $msg;
+    } ?>
+
     <div class="form-group">
         <label class="mb-1" for="post_title">Post Title</label>
         <input name="post_title" class="form-control py-4" id="post_title" type="text" />
@@ -31,9 +34,11 @@ if (isset($_POST['add_post'])) {
     <div class="form-group">
         <label class="mb-1" for="post_category">Select Post Category</label>
         <select class="form-control" name="post_category" id="post_category">
+
             <?php while ($category = mysqli_fetch_assoc($categoryName)) { ?>
                 <option value="<?php echo $category['cat_id'] ?>"> <?php echo $category['cat_name'] ?> </option>
             <?php } ?>
+
         </select>
     </div>
     <div class="form-group">
