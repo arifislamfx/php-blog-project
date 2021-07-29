@@ -12,15 +12,15 @@ $posts = $obj->display_post_public();
             <?php while ($postdata = mysqli_fetch_assoc($posts)) { ?>
                 <div class="col-lg-12">
                     <div class="blog-post">
-                        <div class="blog-thumb">
-                            <img alt="thumbnil" src="upload/<?php echo $postdata['post_img']; ?>">
+                        <div style="max-width:100%; height:auto; object-fit:contain; " class="blog-thumb img-fluid">
+                            <img class="img-fluid img-thumbnail" alt="thumbnil" src="upload/<?php echo $postdata['post_img']; ?>">
                         </div>
                         <div class="down-content">
                             <span><?php echo $postdata['cat_name']; ?></span>
-                            <a href="post-details.html">
+                            <a href="post_details.php?view=postview&&id=<?php echo $postdata['post_id']; ?>">
                                 <h4><?php echo $postdata['post_title']; ?></h4>
                             </a>
-                            <p><?php echo $postdata['post_content']; ?></p>
+
                             <ul class="post-info">
                                 <li><a href="#"><?php echo $postdata['post_author']; ?></a></li>
                                 <li><?php echo $postdata['post_date']; ?></li>

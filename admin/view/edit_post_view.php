@@ -7,7 +7,7 @@ if (isset($_GET['status'])) {
     }
 }
 
-if (isset($_POST['change_post_btn'])) {
+if (isset($_POST['update_post'])) {
     $editpostmsg = $obj->update_edit_post($_POST);
 }
 
@@ -21,12 +21,13 @@ if (isset($_POST['change_post_btn'])) {
         <input type="hidden" name="editpost_id" value="<?php echo $id ?>">
         <div class="form-group">
             <label class="mb-1" for="change_title">Change Title</label> <br>
+
             <input value="<?php echo $postdata['post_title']; ?>" name="change_title" class="form-control py-4" id="change_title" type="text" />
         </div>
         <div class="form-group">
             <label class="mb-1" for="change_content">Change Content</label> <br>
             <textarea cols="30" rows="10" name="change_content" class="form-control py-4" id="change_content"> <?php echo $postdata['post_content']; ?> </textarea>
         </div>
-        <input name="change_post_btn" class="btn btn-primary " type="submit" value="Update Post">
+        <input name="update_post" class="btn btn-primary " type="submit" value="Update Post">
     </form>
 </div>

@@ -35,7 +35,9 @@ $posts = $obj->display_post();
                     </td>
                     <td><?php echo $postdata['post_author']; ?></td>
                     <td><?php echo $postdata['post_date']; ?></td>
-                    <td><?php echo $postdata['cat_name']; ?></td>
+                    <td>
+                        <?php echo $postdata['cat_name']; ?>
+                    </td>
 
                     <td><?php if ($postdata['post_status'] == 1) {
                             echo "Published";

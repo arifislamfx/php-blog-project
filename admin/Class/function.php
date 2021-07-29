@@ -176,17 +176,17 @@ class adminBlog
     }
 
 
-    // edit post
-    // public function update_edit_post($data)
-    // {
-    //     $id = $data['editpost_id'];
-    //     $post_title = $data['change_title'];
-    //     $post_content = $data['change_content'];
+    //edit post update
+    public function update_edit_post($data)
+    {
+        $post_id = $data['editpost_id'];
+        $post_title = $data['change_title'];
+        $post_content = $data['change_content'];
 
-    //     $query = "UPDATE posts SET post_title='$post_title', post_content='$post_content' WHERE post_id = $id";
+        $query = "UPDATE posts SET post_title='$post_title', post_content='$post_content' WHERE post_id = $post_id";
 
-    //     if (mysqli_query($this->conn, $query)) {
-    //         return "Updated post successfully.";
-    //     }
-    // }
+        if (mysqli_query($this->conn, $query)) {
+            return "Post Updated successfully.";
+        }
+    }
 }
