@@ -56,6 +56,8 @@ if (isset($_GET['adminlogout'])) {
                             include('view/cat_edit_view.php');
                         } elseif ($view == 'edit_img') {
                             include('view/edit_img_view.php');
+                        } elseif ($view == 'edit_post') {
+                            include('view/edit_post_view.php');
                         }
                     }
                     ?>
